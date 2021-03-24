@@ -1,5 +1,6 @@
 ﻿Shader "Custom/DummyHole"
 {
+
     SubShader{
         Tags{
                 "RenderType" = "Opaque"
