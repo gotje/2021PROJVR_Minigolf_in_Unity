@@ -6,6 +6,7 @@ using UnityEngine;
 public class Ball_Collider : MonoBehaviour
 {
     private ArrayList teleportLocations = new ArrayList();
+    private int currentHole = 0;
 
     public void Main()
     {
@@ -18,8 +19,11 @@ public class Ball_Collider : MonoBehaviour
         GameObject vrRig = GameObject.FindGameObjectWithTag("Player");
         Debug.Log("Ball is in hole");
         Debug.Log((Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)]);
-        other.gameObject.transform.position = (Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)];
-        vrRig.transform.position = (Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)];
+        currentHole++;
+        //other.gameObject.transform.position = (Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)];
+        //vrRig.transform.position = (Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)];
+        other.gameObject.transform.position = (Vector3)teleportLocations[currentHole];
+        vrRig.transform.position = (Vector3)teleportLocations[currentHole];
 
     }
 }
