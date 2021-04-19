@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -721,6 +721,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1340167511}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &692197439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692197438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed65ba53481278344974e66c681e476f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &692197442
 BoxCollider:
   m_ObjectHideFlags: 0
