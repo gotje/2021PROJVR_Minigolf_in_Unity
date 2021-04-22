@@ -4626,13 +4626,13 @@ Transform:
   - {fileID: 75990416}
   - {fileID: 1463642358}
   - {fileID: 17494261}
-  - {fileID: 1672684718}
   - {fileID: 1378855404}
+  - {fileID: 1672684718}
   - {fileID: 2142497467}
-  - {fileID: 1754878572}
   - {fileID: 1482059999}
   - {fileID: 415099951}
   - {fileID: 1240470101}
+  - {fileID: 1754878572}
   - {fileID: 154176845}
   - {fileID: 154526179}
   - {fileID: 1805852861}
@@ -4642,9 +4642,8 @@ Transform:
   - {fileID: 274520675}
   - {fileID: 1741318870}
   - {fileID: 1795581649}
-  - {fileID: 1947878827}
-  - {fileID: 1754416426}
   - {fileID: 439263677}
+  - {fileID: 1947878827}
   - {fileID: 807511837}
   - {fileID: 942867095}
   - {fileID: 971596147}
@@ -4652,6 +4651,7 @@ Transform:
   - {fileID: 1513597350}
   - {fileID: 899236129}
   - {fileID: 2028302441}
+  - {fileID: 1754416426}
   - {fileID: 618510810}
   - {fileID: 568144951}
   - {fileID: 1019042571}
@@ -8881,6 +8881,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: straight
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2635c6d3d1cea1d40871b90b04d07baa,
+        type: 3}
+      propertyPath: m_TagString
+      value: startPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2635c6d3d1cea1d40871b90b04d07baa, type: 3}
 --- !u!4 &536490563 stripped
@@ -10377,6 +10382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: straight (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2635c6d3d1cea1d40871b90b04d07baa,
+        type: 3}
+      propertyPath: m_TagString
+      value: startPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2635c6d3d1cea1d40871b90b04d07baa, type: 3}
@@ -23607,6 +23617,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: straight
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2635c6d3d1cea1d40871b90b04d07baa,
+        type: 3}
+      propertyPath: m_TagString
+      value: startPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2635c6d3d1cea1d40871b90b04d07baa, type: 3}
 --- !u!1001 &1482059998
@@ -28580,7 +28595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803268634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.51, y: 2.13, z: 17.31}
+  m_LocalPosition: {x: -6.66, y: 1.167, z: 17.645}
   m_LocalScale: {x: 0.20440939, y: 0.20440939, z: 0.20440939}
   m_Children: []
   m_Father: {fileID: 0}
