@@ -15,8 +15,9 @@ public class Ball_Collider : MonoBehaviour
         GameObject[] startPoints = GameObject.FindGameObjectsWithTag("startPoint");
         foreach(GameObject startpoint in startPoints)
         {
-            teleportLocations.Add(new Vector3(startpoint.transform.position.x, startpoint.transform.position.y+1, startpoint.transform.position.z));
+            teleportLocations.Add(new Vector3(startpoint.transform.position.x, startpoint.transform.position.y+0.5f, startpoint.transform.position.z));
         }
+        ResetBallLocation.lastPosition = (Vector3)teleportLocations[0];
     }
 
     void OnTriggerEnter(Collider other)
@@ -27,8 +28,10 @@ public class Ball_Collider : MonoBehaviour
         currentHole++;
         //other.gameObject.transform.position = (Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)];
         //vrRig.transform.position = (Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)];
+        other.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        other.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         other.gameObject.transform.position = (Vector3)teleportLocations[currentHole];
         vrRig.transform.position = (Vector3)teleportLocations[currentHole];
-
+        ResetBallLocation.lastPosition = (Vector3)teleportLocations[currentHole];
     }
 }
