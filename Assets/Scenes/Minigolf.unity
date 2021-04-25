@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11457,6 +11457,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 655128621}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &664557942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: eaac711c8733edd43828a7a4976ee8f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1519253243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &664557943
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664557942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: eaac711c8733edd43828a7a4976ee8f8, type: 3}
 --- !u!4 &668282984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 72d3bb69f36ca644da1c82e40bc74a0b,
@@ -25201,6 +25221,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7918335002988649766, guid: 798683ee698417b4f84a6290ed478e80,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 600c2cf93c11abf4c9f1144144b95d26, type: 2}
     - target: {fileID: -4683669308469848369, guid: 798683ee698417b4f84a6290ed478e80,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -29018,7 +29043,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 33e09ba44497a36488a74ac03b453f0c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0282001
+      value: 1.0677063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33e09ba44497a36488a74ac03b453f0c,
         type: 3}
@@ -29028,17 +29053,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 33e09ba44497a36488a74ac03b453f0c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.2027817
+      value: 4.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33e09ba44497a36488a74ac03b453f0c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4700001
+      value: -1.47
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33e09ba44497a36488a74ac03b453f0c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.622502
+      value: 10.64
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 33e09ba44497a36488a74ac03b453f0c,
         type: 3}
@@ -29313,6 +29338,54 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1666232869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666232861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f6bf3d943ac7945842268c9ef1dca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 2140632832}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CustomReticle: {fileID: 0}
+  m_TeleportationProvider: {fileID: 0}
+  m_MatchOrientation: 0
+  m_TeleportTrigger: 0
 --- !u!1001 &1671313238
 PrefabInstance:
   m_ObjectHideFlags: 0
