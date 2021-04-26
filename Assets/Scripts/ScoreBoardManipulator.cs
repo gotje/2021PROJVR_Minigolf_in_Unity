@@ -5,21 +5,15 @@ using UnityEngine.UI;
 
 public class ScoreBoardManipulator : MonoBehaviour
 {
-    private static ArrayList scores;
-    private static ArrayList finishedHole;
+    private static List<GameObject> scores;
+    private static List<bool> finishedHole;
+    private int totalHoles = 18;
 
     public void Main()
     {
-        Text[] allText = GameObject.Find("Score Board Panel").GetComponentsInChildren<Text>();
-        foreach(Text textField in allText)
-        {
-            if(textField.tag == "scoreField")
-            {
-                scores.Add(textField);
-            }
-            Debug.Log(textField.tag);
-        }
-        for (int dmx = 0; dmx < scores.Count; dmx++)
+        finishedHole = new List<bool>();
+        scores = new List<GameObject>(GameObject.FindGameObjectsWithTag("scoreField"));
+        for (int dmx = 0; dmx < totalHoles; dmx++)
         {
             finishedHole.Add(false);
         }
@@ -41,12 +35,12 @@ public class ScoreBoardManipulator : MonoBehaviour
     public static void increaseScore()
     {
         int counter = 0;
-        Debug.Log(scores);
         for (int dmx = 0; dmx < finishedHole.Count; dmx++)
         {
             if (!(bool)finishedHole[dmx])
             {
-                ((GameObject)scores[counter]).GetComponent<Text>().text = ((GameObject)scores[counter]).GetComponent<Text>().text + 1;
+                int temporary = int.Parse(scores[counter].GetComponent<Text>().text) + 1;
+                scores[counter].GetComponent<Text>().text = "" + temporary;
                 break;
             }
             counter++;

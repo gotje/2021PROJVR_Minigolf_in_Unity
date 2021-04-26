@@ -33,6 +33,6 @@ public class Ball_Collider : MonoBehaviour
         other.gameObject.transform.position = (Vector3)teleportLocations[currentHole];
         vrRig.transform.position = (Vector3)teleportLocations[currentHole];
         ResetBallLocation.lastPosition = (Vector3)teleportLocations[currentHole];
-        ScoreBoardManipulator.increaseScore();
+        ScoreBoardManipulator.FinishedHole();
     }
 }

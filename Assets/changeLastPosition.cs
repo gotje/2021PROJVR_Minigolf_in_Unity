@@ -9,5 +9,6 @@ public class changeLastPosition : MonoBehaviour
         Debug.Log("OnCollisionEnter - Setting LastLocation");
         Debug.Log(other.gameObject.name);
         ResetBallLocation.lastPosition = other.transform.position;
+        ScoreBoardManipulator.increaseScore();
     }
 }
