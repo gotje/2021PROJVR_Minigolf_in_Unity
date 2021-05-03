@@ -7,13 +7,12 @@ public class ScoreBoardManipulator : MonoBehaviour
 {
     private static List<GameObject> scores;
     private static List<bool> finishedHole;
-    private int totalHoles = 18;
 
     public void Main()
     {
         finishedHole = new List<bool>();
         scores = new List<GameObject>(GameObject.FindGameObjectsWithTag("scoreField"));
-        for (int dmx = 0; dmx < totalHoles; dmx++)
+        for (int dmx = 0; dmx < scores.Count; dmx++)
         {
             finishedHole.Add(false);
         }
