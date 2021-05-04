@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using static UnityEngine.Input;
 
 public class hideCanvas : MonoBehaviour
 {
-    private InputDevice controller;
     private Renderer r;
+    public InputDevice controller;
 
     // Start is called before the first frame update
     void Start()
     {
-        List<InputDevice> devices = new List<Inputdevice>();
+        List<InputDevice> devices = new List<InputDevice>();
         InputDeviceCharacteristics leftControllerCharacteristics = InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller;
-        InputDevices.GetDevicesWithCharacteristics(leftControllerCharacteristics devices);
+        InputDevices.GetDevicesWithCharacteristics(leftControllerCharacteristics, devices);
         if(devices.Count > 0)
         {
             controller = devices[0];
-            Debug.log("device added");
         }
         r = gameObject.GetComponent<Renderer>();
     }
@@ -25,14 +25,16 @@ public class hideCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetDevice.TryGetFeatureValue(CommonUsages.grip, out float state);
+        //float state = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, controller);
+        
+        controller.TryGetFeatureValue(CommonUsages.grip, out float state);
         if (state > 0.5f)
         {
             ShowCanvas();
         }
         else
         {
-            HideCanvas();
+            DissapearCanvas();
         }
     }
 
@@ -41,7 +43,7 @@ public class hideCanvas : MonoBehaviour
         r.enabled = true;
     }
 
-    private void HideCanvas()
+    private void DissapearCanvas()
     {
         r.enabled = false;
     }
