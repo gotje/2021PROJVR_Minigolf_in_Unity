@@ -6,6 +6,7 @@ TagManager:
   tags:
   - golfBall
   - startPoint
+  - scoreField
   layers:
   - Default
   - TransparentFX
