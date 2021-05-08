@@ -29,6 +29,7 @@ public class GoalCondtitions : MonoBehaviour
         //Debug.Log((Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)]);
         //other.gameObject.transform.position = (Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)];
         //vrRig.transform.position = (Vector3)teleportLocations[Int32.Parse(this.gameObject.name.Split('_')[1] + 1)];
+        
         other.GetComponent<Rigidbody>().velocity = Vector3.zero;
         other.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         other.gameObject.transform.position = (Vector3)teleportLocations[currentHole];
