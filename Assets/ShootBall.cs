@@ -30,7 +30,7 @@ public class ShootBall : MonoBehaviour
 
     static void ThrowArch()
     {
-        baseball.GetComponent<Rigidbody>().velocity = new Vector3(0, 7.5f, -8.5f);
+        baseball.GetComponent<Rigidbody>().velocity = new Vector3(0, 7.5f, -9f);
     }
 
     
