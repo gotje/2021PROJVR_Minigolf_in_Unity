@@ -52,7 +52,7 @@ public class changeSpeed : MonoBehaviour
 				if (!hitInfo.collider.isTrigger)
 				{
 					myRigidbody.position = hitInfo.point - (movementThisStep / movementMagnitude) * partialExtent;
-					myRigidbody.velocity = previousVelocity * (-4);
+					myRigidbody.velocity = previousVelocity * (-2);
 				}
 			}
 		}
@@ -62,6 +62,6 @@ public class changeSpeed : MonoBehaviour
 
 	void OnCollisionEnter()
     {
-		myRigidbody.velocity = previousVelocity * (-4);
+		myRigidbody.velocity = previousVelocity * (-2);
 	}
 }
