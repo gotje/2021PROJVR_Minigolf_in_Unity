@@ -32,6 +32,19 @@ public class colliderScript : MonoBehaviour
 
 	void Update()
 	{
+		Ray ray = new Ray(myRigidbody.position, previousPosition);
+		RaycastHit hitInfo;
+		Vector3 vel = myRigidbody.position - previousPosition;
+		if(Physics.Raycast(ray, out hitInfo))
+        {
+			if (hitInfo.collider.tag == "golfBall")
+			{
+				GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity = vel / Mathf.Sqrt(vel.sqrMagnitude) * 50;
+				Debug.Log("golfbal raycast " + GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity + "-" + myRigidbody.velocity);
+			}
+		}
+		previousPosition = transform.position;
+		/*
 		//have we moved more than our minimum extent? 
 		Vector3 movementThisStep = myRigidbody.position - previousPosition;
 		float movementSqrMagnitude = movementThisStep.sqrMagnitude;
@@ -62,8 +75,10 @@ public class colliderScript : MonoBehaviour
 					Debug.Log("raycasthit");
 				}
 			}
+		
 		}
 		previousPosition = myRigidbody.position;
+		*/
 	}
 
 	/*void OnCollisionEnter(Collision other)

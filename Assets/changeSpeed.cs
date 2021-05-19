@@ -16,6 +16,7 @@ public class changeSpeed : MonoBehaviour
 	private Vector3 previousVelocity;
 	private Rigidbody myRigidbody;
 	private Collider myCollider;
+	private readonly Random random = new Random();
 
 	//initialize values 
 	void Start()
