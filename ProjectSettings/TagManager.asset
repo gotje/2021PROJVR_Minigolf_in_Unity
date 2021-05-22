@@ -8,6 +8,7 @@ TagManager:
   - startPoint
   - scoreField
   - Hole
+  - BallSound
   layers:
   - Default
   - TransparentFX
