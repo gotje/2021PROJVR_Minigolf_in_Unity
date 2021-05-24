@@ -42,6 +42,7 @@ public class collisionSpeed : MonoBehaviour
                 this.gameObject.layer = restrictedLayer;
                 collision.rigidbody.velocity = velocity * 5;
                 Debug.Log(collision.rigidbody.velocity);
+                collisionSound();
             }
         }
         prevTimeColl = (float)DateTime.Now.Millisecond;
@@ -66,12 +67,18 @@ public class collisionSpeed : MonoBehaviour
                     this.gameObject.layer = restrictedLayer;
                     velocity.x = 0;
                     GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity = velocity;
+                    collisionSound();
                 }
             }
         }
         previous = transform.position;
         prevTimeFixedUpdate = (float)DateTime.Now.Millisecond;
         
+    }
+    void collisionSound(){
+    	//play sound ball collision putter
+
+    	
     }
 }
 
