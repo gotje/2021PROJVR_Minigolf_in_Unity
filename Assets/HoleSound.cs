@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
+
+[RequireComponent(typeof(AudioSource))]
 
 public class HoleSound : MonoBehaviour
 {
+	public AudioClip BallDrop;
+	AudioSource soundSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+    	soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,8 +25,9 @@ public class HoleSound : MonoBehaviour
 
     void OnCollisionEnter(Collision collision){
     	if (hitInfo.collider.tag == "BallSound"){
-    		//play sound ball in hole
+    		audioSource.PlayOneShot(BallDrop, 0,7F);
 
     	}
+    	
     }
 }
