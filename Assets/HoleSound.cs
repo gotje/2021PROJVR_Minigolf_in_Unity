@@ -17,10 +17,10 @@ public class HoleSound : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision){
-    	if (hitInfo.collider.tag == "BallSound"){
+    //void OnCollisionEnter(Collision collision){
+    //	if (hitInfo.collider.tag == "BallSound"){
     		//play sound ball in hole
 
-    	}
-    }
+    //	}
+    //}
 }
