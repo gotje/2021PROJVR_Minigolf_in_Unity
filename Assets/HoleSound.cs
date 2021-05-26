@@ -21,14 +21,4 @@ public class HoleSound : MonoBehaviour
     void Update()
     {
 
-        
-    }
 
-    //void OnCollisionEnter(Collision collision){
-    //	if (hitInfo.collider.tag == "BallSound"){
-    //		soundSource.PlayOneShot(BallDrop, 0.7F);
-
-    //	}
-    	
-    //}
-}
