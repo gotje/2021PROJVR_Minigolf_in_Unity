@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ballCollision : MonoBehaviour
 {
@@ -28,9 +28,15 @@ public class ballCollision : MonoBehaviour
         partialExtent = minimumExtent * (1.0f - skinWidth);
         sqrMinimumExtent = minimumExtent * minimumExtent;
         change = new changeLastPosition();
-        
-    }
 
+    }
+    void OnCollision(Collision collision)
+    { 
+        if (collision.gameObject.tag == "GameController")
+        {
+            myRigidbody.velocity = myRigidbody.velocity * 4;
+        }
+    }
     // Update is called once per frame
     void Update()
     {

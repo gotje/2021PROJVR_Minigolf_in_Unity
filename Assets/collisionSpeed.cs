@@ -5,49 +5,52 @@ using System;
 using System.Threading.Tasks;
 
 
-
 public class collisionSpeed : MonoBehaviour
 {
     Vector3 previous;
     Vector3 velocity;
-    float prevTimeColl; 
+    float prevTimeFixedUpdat;
     float prevTimeFixedUpdate;
     private Rigidbody myRigidbody;
-    Vector3 previousColl;
+    Vector3 previousc;
     private int restrictedLayer = 12;
     private int freedLayer = 0;
     int frames = 0;
+    private int counter;
 
     void Start()
     {
-        prevTimeColl = 0;
+        prevTimeFixedUpdat = 0;
         prevTimeFixedUpdate = 0;
         myRigidbody = GetComponent<Rigidbody>();
         previous = transform.position;
-        previousColl = transform.position;
+        previousc = transform.position;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        frames++;
-        this.gameObject.layer = freedLayer;
-        if (frames > 4)
-        {
-            if (collision.gameObject.tag == "golfBall")
-            {
-                frames = 0;
-                float delta = (float)DateTime.Now.Millisecond - prevTimeColl;
-                velocity = new Vector3(transform.position.x - previousColl.x, 0, transform.position.z - previousColl.z) / delta;
-                Debug.Log(velocity);
-                this.gameObject.layer = restrictedLayer;
-                collision.rigidbody.velocity = velocity * 5;
-                Debug.Log(collision.rigidbody.velocity);
-                collisionSound();
-            }
-        }
-        prevTimeColl = (float)DateTime.Now.Millisecond;
-        previousColl = transform.position;
+        //frames++;
+        //this.gameObject.layer = freedLayer;
+        //if (frames > 4)
+        //{
+        //    if (collision.gameObject.tag == "golfBall")
+        //    {
+        //        frames = 0;
+        //        float delta = (float)DateTime.Now.Millisecond - prevTimeFixedUpdate;
+        //        velocity = new Vector3(transform.position.x - previous.x, 0, transform.position.z - previous.z);
+        //        Debug.Log(velocity + "velocity putter");
+        //        this.gameObject.layer = restrictedLayer;
+        //        collision.rigidbody.velocity = velocity * 5;
+        //        Debug.Log(collision.rigidbody.velocity + "new velocity ball");
+        //        collisionSound();
+        //    }
+        //}
+        //prevTimeFixedUpdate = (float)DateTime.Now.Millisecond;
+        //previous = transform.position;
+        FixedUpdate();
     }
+
+
 
     void FixedUpdate()
     {
@@ -63,23 +66,23 @@ public class collisionSpeed : MonoBehaviour
                 {
                     frames = 0;
                     float delta = (float)DateTime.Now.Millisecond - prevTimeFixedUpdate;
-                    velocity = new Vector3(transform.position.x - previous.x, 0, transform.position.z - previous.z) / delta * 5;
+                    velocity = new Vector3(transform.position.x - previous.x, 0, transform.position.z - previous.z) * 200;
                     this.gameObject.layer = restrictedLayer;
-                    velocity.x = 0;
                     GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity = velocity;
                     collisionSound();
+                    Debug.Log("RAYCASTING" + GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity);
+                    Debug.Log("DELTA: " + delta);
+                    ScoreBoardManipulator.increaseScore();
                 }
             }
         }
         previous = transform.position;
         prevTimeFixedUpdate = (float)DateTime.Now.Millisecond;
-        
+        counter = 0;
     }
-    void collisionSound(){
-    	//play sound ball collision putter
 
-    	
+    void collisionSound()
+    {
+        //play sound ball collision putter
     }
 }
-
-
