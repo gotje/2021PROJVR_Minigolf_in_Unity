@@ -31,7 +31,7 @@ public class collisionSpeed : MonoBehaviour
     {
             if (collision.gameObject.tag == "golfBall")
             {
-                collision.rigidbody.velocity = collision.rigidbody.velocity * 130;
+                collision.rigidbody.velocity = collision.rigidbody.velocity * 100;
             }
     }
 
@@ -43,7 +43,7 @@ public class collisionSpeed : MonoBehaviour
         {
             if (hitInfo.collider.tag == "golfBall")
             {
-                GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity = GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity * 130;
+                GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity = GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity * 100;
             }
         }
     }
