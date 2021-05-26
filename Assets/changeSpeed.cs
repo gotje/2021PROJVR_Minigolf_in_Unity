@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class changeSpeed : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class changeSpeed : MonoBehaviour
 	private Vector3 previousVelocity;
 	private Rigidbody myRigidbody;
 	private Collider myCollider;
-	private readonly Random random = new Random();
+	private readonly System.Random random = new System.Random();
+
+	private 
 
 	//initialize values 
 	void Start()
@@ -32,6 +35,8 @@ public class changeSpeed : MonoBehaviour
 
 	void Update()
 	{
+		int randomNum = random.Next(100,300);
+		float randomFloat = randomNum / 100;
 		//have we moved more than our minimum extent? 
 		Vector3 movementThisStep = myRigidbody.position - previousPosition;
 		float movementSqrMagnitude = movementThisStep.sqrMagnitude;
@@ -53,7 +58,7 @@ public class changeSpeed : MonoBehaviour
 				if (!hitInfo.collider.isTrigger)
 				{
 					myRigidbody.position = hitInfo.point - (movementThisStep / movementMagnitude) * partialExtent;
-					myRigidbody.velocity = previousVelocity * (-2);
+					myRigidbody.velocity = previousVelocity * (-2) * randomFloat;
 				}
 			}
 		}
@@ -63,6 +68,8 @@ public class changeSpeed : MonoBehaviour
 
 	void OnCollisionEnter()
     {
-		myRigidbody.velocity = previousVelocity * (-2);
+		int randomNum = random.Next(100, 300);
+		float randomFloat = randomNum / 100;
+		myRigidbody.velocity = previousVelocity * (-2) * randomFloat;
 	}
 }
