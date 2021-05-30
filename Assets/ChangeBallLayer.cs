@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Credits to quill8creates for the principle of this code
+//https://www.youtube.com/watch?v=fvlakpubZQk
+
 public class ChangeBallLayer : MonoBehaviour
 {
     private int restrictedLayer = 9; //BallOutHole
