@@ -9,6 +9,8 @@ TagManager:
   - scoreField
   - Hole
   - BallSound
+  - BaseBallScene
+  - MiniGolfScene
   layers:
   - Default
   - TransparentFX
