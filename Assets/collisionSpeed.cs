@@ -17,6 +17,7 @@ public class collisionSpeed : MonoBehaviour
     private int restrictedLayer = 12;
     private int freedLayer = 0;
     int frames = 0;
+    AudioSource PutterHit;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class collisionSpeed : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
         previous = transform.position;
         previousColl = transform.position;
+        PutterHit = this.GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -32,6 +34,7 @@ public class collisionSpeed : MonoBehaviour
             if (collision.gameObject.tag == "golfBall")
             {
                 collision.rigidbody.velocity = collision.rigidbody.velocity * 100;
+            collisionSound();
             }
     }
 
@@ -44,13 +47,13 @@ public class collisionSpeed : MonoBehaviour
             if (hitInfo.collider.tag == "golfBall")
             {
                 GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity = GameObject.Find("GolfBall").GetComponent<Rigidbody>().velocity * 100;
+                collisionSound();
             }
         }
     }
     void collisionSound(){
-    	//play sound ball collision putter
-
-    	
+        //play sound ball collision putter
+        PutterHit.Play();
     }
 }
 
